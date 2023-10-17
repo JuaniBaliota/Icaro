@@ -1,0 +1,12 @@
+Feature: Registro de usuario en un sitio web
+
+  Scenario: Crear una cuenta de usuario exitosamente
+    Given usuario se encuentra en la página de inicio
+    When usuario clickea en "My Account"
+    And usuario selecciona sobre "Register"
+    And usuario completa el registro con los siguientes datos:
+      | Nombre       | Apellido | Correo              | Teléfono    | Contraseña | Confirmar Contraseña |
+      | Juan         | Baliota      | algo@nada.com    | 135798642  | Argentina123   | Argentina123             |
+    And usuario acepta la política de privacidad
+    And usuario hace clic en "Continuar"
+    Then El sistema muestra el siguiente mensaje de éxito: "Congratulations! Your new account has been successfully created!"
